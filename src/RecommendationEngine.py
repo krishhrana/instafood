@@ -51,15 +51,15 @@ def main():
 # onion garlic hummus egg bread tortilla
 
 if __name__ == '__main__':
-    if not os.path.exists("DataSets"):
-        with zipfile.ZipFile("DataSets.zip", 'r') as zip_ref:
+    if not os.path.exists("./DataSets"):
+        with zipfile.ZipFile("./DataSets.zip", 'r') as zip_ref:
             zip_ref.extractall()
             time.sleep(10)
     if not os.path.exists("models"):
-        with zipfile.ZipFile("models.zip", 'r') as zip_ref:
+        with zipfile.ZipFile("./models.zip", 'r') as zip_ref:
             zip_ref.extractall()
             time.sleep(10)
-    model = RecommendationModel(data_path='DataSets/Clean and Clustered Data/food_data_clustered.csv',
+    model = RecommendationModel(data_path='./DataSets/Clean and Clustered Data/food_data_clustered.csv',
                                 encoder_path='models')
     model.load(path='models/v2/kmeans_500.joblib')
     st.title('InstaFood')
