@@ -34,7 +34,7 @@ class RecommendationModel():
 
     def load(self, path):
         self.cluster_model = load(path)
-        self.data = pd.read_csv('src/DataSets/Clean and Clustered Data/food_data_clustered.csv')
+        self.data = pd.read_csv('DataSets/Clean and Clustered Data/food_data_clustered.csv')
 
     def predict(self, user_input):
         user_input = self.__processInput(user_input)
