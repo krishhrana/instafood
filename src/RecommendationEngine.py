@@ -59,8 +59,8 @@ if __name__ == '__main__':
         with zipfile.ZipFile("src/models.zip", 'r') as zip_ref:
             zip_ref.extractall()
             time.sleep(10)
-    model = RecommendationModel(data_path='src/DataSets/Clean and Clustered Data/food_data_clustered.csv',
-                                encoder_path='src/models')
-    model.load(path='src/models/v2/kmeans_500.joblib')
+    model = RecommendationModel(data_path='DataSets/Clean and Clustered Data/food_data_clustered.csv',
+                                encoder_path='models')
+    model.load(path='models/v2/kmeans_500.joblib')
     st.title('InstaFood')
     main()
